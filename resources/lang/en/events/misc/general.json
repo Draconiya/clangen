@@ -12975,5 +12975,44 @@
       }
     }
   ]
+},
+
+
+{
+    "event_id": "gen_misc_newleafghost",
+    "location": ["forest","plains","beach","mountainous","wetlands"],
+    "season": ["newleaf"],
+    "sub_type": [],
+    "tags": [],
+    "frequency": 1,
+    "event_text": "The evening chorus of bird calls echoes through the twilit sky. m_c perks up - amid the tweets and warbles, {PRONOUN/m_c/subject} could swear a cat called {PRONOUN/m_c/poss} name. Following the sound, m_c finds a glossy-feathered raven, tilting its head as it greets them with the voice of r_c. It speaks of prophecy_list, before fluttering into the violet night.",
+    "m_c": {
+        "age": ["any"],
+        "status": ["living"],
+        "relationship_status": [],
+        "skill": ["GHOST,1"],
+        "trait": [],
+        "backstory": [],
+        "dies": false
+    },
+    "r_c": {
+        "age": ["-newborn"],
+        "status": ["-living","starclan","unknownresidence"],
+        "relationship_status": [],
+        "skill": ["-DARK,0"],
+        "dies": false
+    },
+    "relationships": [
+        {
+            "cats_from": ["m_c"],
+            "cats_to": ["r_c"],
+            "mutual": false,
+            "values": ["like","trust","respect"],
+            "amount": 8,
+            "log": {
+                "cats_from": "r_c spoke to m_c as a spirit in raven form."
+                 }
+        }
+    ]
 }
 ]
