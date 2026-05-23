@@ -4365,5 +4365,160 @@
                 "frequency": 4
             }
         ]
-    }
+    },
+
+    {
+    "patrol_id": "pln_train_mentorappwindswepttree",
+    "biome": ["plains"],
+    "season": ["newleaf","greenleaf","leaf-fall"],
+    "types": ["training"],
+    "tags": [],
+    "poi": {
+        "name": ["terrain_windswepttree"]
+        },
+    "patrol_art": "gen_train_talkingWA",
+    "min_cats": 2,
+    "max_cats": 2,
+    "min_max_status": {
+        "apprentice": [
+            1,
+            1
+        ],
+        "normal adult": [
+            1,
+            1
+        ]
+    },
+    "frequency": 3,
+    "chance_of_success": 60,
+    "relationship_constraint": ["mentor/app"],
+    "intro_text": "p_l takes app1 to {POI/name/terrain_windswepttree}. It provides one of the few opportunities in c_n's open territory to practice climbing.",
+    "decline_text": "The wind picks up, tearing at p_l's pelt. This is no weather for climbing practice, {PRONOUN/p_l/subject} {VERB/p_l/decide/decides}, and {VERB/p_l/guide/guides} app1 back to camp.",
+    "success_outcomes": [
+        {
+            "text": "The wind plays a rustling song in the leaves as app1 seeks paw-holds, mimicking p_l's movements above {PRONOUN/app1/object}. c_n may not need to climb often, but when they do, it's best to be prepared. Reaching a high branch, app1 looks out over the rolling landscape, and feels a little light-headed. {PRONOUN/app1/subject/CAP} can see so far!",
+            "exp": 15,
+            "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["app1"],
+                    "cats_to": ["p_l"],
+                    "mutual": false,
+                    "values": ["trust","respect"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "cat_from followed cat_to's lead up {POI/name/terrain_windswepttree}, and felt secure in {PRONOUN/cat_to/poss} company."
+                    }
+                }
+            ],
+            "art": "fst_train_session1"
+        },
+        
+        {
+            "text": "p_l guides app1 up {POI/name/terrain_windswepttree}. As they climb, {PRONOUN/p_l/subject} {VERB/p_l/tell/tells} {PRONOUN/app1/object} stories about the many times cats have sought shelter on its branches: during a stampede, fleeing hungry teeth, or clinging to high ground in a flood. app1 listens intently. So this is why c_n values {POI/name/terrain_windswepttree} so highly. Even if it's just a tree, in the absence of other trees, it becomes precious. p_l purrs, praising app1's understanding.",
+            "exp": 25,
+            "frequency": 4,
+            "stat_skill": ["STORY,1","LORE,1"],
+            "can_have_stat": ["p_l"],
+            "relationships": [
+                {
+                    "cats_from": ["app1"],
+                    "cats_to": ["p_l"],
+                    "mutual": true,
+                    "values": ["like","trust","respect"],
+                    "amount": 8,
+                    "log": {
+                        "cats_from": "cat_from learned a lot from cat_to's stories of cats finding refuge on {POI/name/terrain_windswepttree}.",
+                        "cats_to": "cat_to enjoyed teaching cat_from through stories of cats finding refuge on {POI/name/terrain_windswepttree}."
+                    
+                    }
+                }
+            ],
+            "art": "fst_train_session1"
+        }
+    ],
+    "fail_outcomes": [
+        {
+            "text": "app1 gazes up into {POI/name/terrain_windswepttree}'s canopy, arching {PRONOUN/app1/poss} back. It looks so tall! p_l tries to coax {PRONOUN/app1/object} into at least trying to slowly climb the trunk. app1 attempts to mimic p_l's paw-holds, but slips and falls almost immediately. app1 tries again, but never makes it far, and eventually gives up.",
+            "exp": 0,
+            "frequency": 4,
+            "relationships": [
+                {
+                    "cats_from": ["app1"],
+                    "cats_to": ["p_l"],
+                    "mutual": false,
+                    "values": ["trust","comfort","like"],
+                    "amount": -5,
+                    "log": {
+                        "cats_from": "cat_from didn't trust cat_to's lesson on tree-climbing anymore after {PRONOUN/cat_from/subject} slipped several times."
+                    }
+                },
+                
+                {
+                    "cats_from": ["p_l"],
+                    "cats_to": ["app1"],
+                    "mutual": false,
+                    "values": ["trust","like"],
+                    "amount": -5,
+                    "log": {
+                        "cats_from": "cat_from was disappointed cat_to gave up trying to climb {POI/name/terrain_windswepttree}."
+                    }
+                }
+            ],
+            "art": "gen_anxious2"
+        },
+        
+        {
+            "text": "app1 climbs up after p_l. Near the top, a piece of bark suddenly cracks and crumbles under {PRONOUN/app1/poss} claws, sending app1 tumbling out of {POI/name/terrain_windswepttree}. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} fall far enough to break anything, but still limps on the way back to camp, led by {PRONOUN/app1/poss} worried mentor.",
+            "exp": 0,
+            "frequency": 1,
+            "injury": [
+                {
+                    "cats": ["app1"],
+                    "injuries": ["sprain"],
+                    "no_results": false
+                }
+            ],
+            "relationships": [
+                {
+                    "cats_from": ["app1"],
+                    "cats_to": ["p_l"],
+                    "mutual": false,
+                    "values": ["trust","comfort"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "Following cat_to's lead led cat_from to fall out of {POI/name/terrain_windswepttree}."
+                    }
+                }
+            ],
+            "art": "fst_train_session1"
+        },
+        
+        {
+            "text": "app1 climbs up after p_l. Near the top, a piece of bark suddenly cracks and crumbles under {PRONOUN/app1/poss} claws, sending app1 tumbling out of {POI/name/terrain_windswepttree}. {PRONOUN/app1/subject/CAP} {VERB/app1/don't/doesn't} fall far enough to break anything, but still limps on the way back to camp, led by {PRONOUN/app1/poss} worried mentor.",
+            "exp": 0,
+            "frequency": 1,
+            "injury": [
+                {
+                    "cats": ["app1"],
+                    "injuries": ["dislocated joint"],
+                    "no_results": false
+                }
+            ],
+            "relationships": [
+                {
+                    "cats_from": ["app1"],
+                    "cats_to": ["p_l"],
+                    "mutual": false,
+                    "values": ["trust","comfort"],
+                    "amount": 5,
+                    "log": {
+                        "cats_from": "Following cat_to's lead led cat_from to fall out of {POI/name/terrain_windswepttree}."
+                    }
+                }
+            ],
+            "art": "fst_train_session1"
+        }
+    ]
+}
 ]
